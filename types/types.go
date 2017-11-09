@@ -4,7 +4,7 @@ import "gopkg.in/mgo.v2/bson"
 
 // WebhookInfo - Physical format of stored webhook info
 type WebhookInfo struct {
-	ID             bson.ObjectId `json:"_id" bson:"_id,omitempty"`
+	ID             bson.ObjectId `json:"id" bson:"_id,omitempty"`
 	URL            string        `bson:"webhookURL"`
 	BaseCurrency   string        `bson:"baseCurrency"`
 	TargetCurrency string        `bson:"targetCurrency"`
