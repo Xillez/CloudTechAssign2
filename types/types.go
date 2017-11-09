@@ -4,12 +4,12 @@ import "gopkg.in/mgo.v2/bson"
 
 // WebhookInfo - Physical format of stored webhook info
 type WebhookInfo struct {
-	ID             bson.ObjectId `                       bson:"_id,omitempty"`
-	URL            string        `json:"webhookURL"      bson:"webhookURL"`
-	BaseCurrency   string        `json:"baseCurrency"    bson:"baseCurrency"`
-	TargetCurrency string        `json:"targetCurrency"  bson:"targetCurrency"`
-	MinValue       float64       `json:"minTriggerValue" bson:"minTriggerValue"`
-	MaxValue       float64       `json:"maxTriggerValue" bson:"maxTriggerValue"`
+	ID             bson.ObjectId `json:"_id" bson:"_id,omitempty"`
+	URL            string        `bson:"webhookURL"`
+	BaseCurrency   string        `bson:"baseCurrency"`
+	TargetCurrency string        `bson:"targetCurrency"`
+	MinValue       float64       `bson:"minTriggerValue"`
+	MaxValue       float64       `bson:"maxTriggerValue"`
 }
 
 // WebhookInv - Payload for invoking the webhook
@@ -32,10 +32,10 @@ type WebhookDisp struct {
 
 // CurrencyInfo - Physical format of stored response from api.fixer.io/latest
 type CurrencyInfo struct {
-	ID           bson.ObjectId      `             bson:"_id,omitempty"`
-	BaseCurrency string             `json:"base"  bson:"baseCurrency"`
-	Date         string             `json:"date"  bson:"date"` // Date format yyyy-mm-dd
-	Rates        map[string]float64 `json:"rates" bson:"rates"`
+	ID           bson.ObjectId      `bson:"_id,omitempty"`
+	BaseCurrency string             `bson:"baseCurrency"`
+	Date         string             `bson:"date"` // Date format yyyy-mm-dd
+	Rates        map[string]float64 `bson:"rates"`
 }
 
 // CurrencyReq - Used variously, requesting exchange, running average, etc.
