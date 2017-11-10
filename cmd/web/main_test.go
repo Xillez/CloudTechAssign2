@@ -1,13 +1,9 @@
 package main
 
 import (
-	"bytes"
 	"encoding/json"
-	"fmt"
-	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
-	"strings"
 	"testing"
 
 	"github.com/Xillez/CloudTechAssign2/mongodb"
@@ -66,7 +62,7 @@ func Test_Pos_ProcGetWebhook(t *testing.T) {
 }
 
 // Positive test, ProcAddWebhook
-func Test_Pos_ProcAddWebhook(t *testing.T) {
+/*func Test_Pos_ProcAddWebhook(t *testing.T) {
 	DB = &mongodb.MongoDB{"mongodb://localhost", "Testing", "testWeb", "testCurr"}
 	DB.Init()
 
@@ -125,4 +121,4 @@ func Test_Pos_ProcAddWebhook(t *testing.T) {
 
 	// Clean up after testing
 	_ = session.DB(DB.DatabaseName).C(DB.WebCollName).DropCollection()
-}
+}*/
